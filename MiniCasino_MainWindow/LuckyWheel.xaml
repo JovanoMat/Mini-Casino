@@ -1,0 +1,126 @@
+﻿<Window x:Class="MiniCasino_MainWindow.LuckyWheel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniCasino_MainWindow"
+        mc:Ignorable="d"
+        Title="LuckyWheel" Height="450" Width="700"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Grid>
+        <Grid>
+            <!--Backgroundcolor gradiant-->
+            <Border CornerRadius="20" >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#0C031C" Offset="0"/>
+                        <GradientStop Color="#2A2165" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <!--Textblocks for next spin timer-->
+            <TextBlock Text="Next spin in:" Width="150" Height="35" Margin="20,20,0,0"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       Foreground="#9EFAFF"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica"
+                       FontSize="25">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock x:Name="tblTime" Text="TIME" Width="250" Height="35" Margin="170,20,0,0"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       Foreground="#9EFAFF"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica"
+                       FontSize="25">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+
+            <Button x:Name="btnClose" Content="Leave" Width="110" Height="40" Margin="0,0,20,20"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    BorderBrush="#9EFAFF"
+                    BorderThickness="0.5"
+                    FontFamily="Helvetica"
+                    FontSize="25"
+                    FontWeight="DemiBold" Click="btnClose_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            <Button x:Name="btnSpin" Content="Draw" Width="110" Height="40" Margin="0,0,20,90"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    BorderBrush="#9EFAFF"
+                    BorderThickness="0.5"
+                    FontFamily="Helvetica"
+                    FontSize="25"
+                    FontWeight="DemiBold"
+                    IsEnabled="False" Click="btnSpin_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            
+            <TextBlock x:Name="tblWin" Text="0" Height="220" Width="220"
+                   Foreground="#9EFAFF"
+                   FontSize="100"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"
+                   TextTrimming="None">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                      Color="#9EFAFF"
+                                      Opacity="100"
+                                      BlurRadius="10"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock x:Name="tblWinMSG" Text="" Height="40" Width="320" Margin="0,353,0,0"
+                   Foreground="#9EFAFF"
+                   FontSize="25"
+                   FontFamily="Helvetica"
+                   FontWeight="DemiBold"
+                   TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                      Color="#9EFAFF"
+                                      Opacity="100"
+                                      BlurRadius="10"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+
+        </Grid>
+    </Grid>
+</Window>

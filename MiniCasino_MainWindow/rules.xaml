@@ -1,0 +1,167 @@
+﻿<Window x:Class="MiniCasino_MainWindow.rules"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniCasino_MainWindow"
+        mc:Ignorable="d"
+        Title="rules" Height="550" Width="1000"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <!--Background radiant -->
+            <Border CornerRadius="20" Grid.ColumnSpan="3" >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#0C031C" Offset="0"/>
+                        <GradientStop Color="#2A2165" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <!--Blackjack rules-->
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Blackjack" Height="40" Width="220" Margin="0,25,0,0" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="#9EFAFF"
+                           FontSize="35"
+                           FontWeight="DemiBold"
+                           FontFamily="Helvetica"
+                           TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+                <TextBlock Text="Try to get as close as possible to 21!
+                           An ace can be 1 or 11 and every Jack, Queen and King is worth 10. 
+                           Get a blackjack on your first two cards and get back twice and a half your bet back!
+                           Every other blackjack wins you twice your bet. But if you are feeing lucky you can double
+                           your bet to increase your winnings!" TextWrapping="Wrap" Height="400" Width="220" Margin="0,25,0,0" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="#9EFAFF"
+                           FontSize="18"
+                           FontWeight="DemiBold"
+                           FontFamily="Helvetica"
+                           TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+            </StackPanel>
+            
+            
+            <!--Slots rules-->
+            <StackPanel Grid.Column="1">
+                <TextBlock Grid.Column="1" Text="Slots"  Height="40" Width="220" Margin="0,25,0,0" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Foreground="#9EFAFF"
+                       FontSize="35"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica"
+                       TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+                <TextBlock Text="Try to get the best possible combination!
+                           The 7 7 7 jackpot wins you 35 times your bet! Only two 7s already win you 7 times your bet as well, just like 3 hearts. 
+                           3 clubs win you 5 times your bet, 2 win you 2 times your bet. Get 3 times your bet with 3 diamonds or 2 times your bet with 2. 3 Spades also win you 3 times your bet but 2 only give you back your bet. Every other combination just loses you your bet." TextWrapping="Wrap" Height="400" Width="220" Margin="0,25,0,0" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="#9EFAFF"
+                           FontSize="18"
+                           FontWeight="DemiBold"
+                           FontFamily="Helvetica"
+                           TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+            </StackPanel>
+
+            <!--Roulette rules-->
+            <StackPanel Grid.Column="2">
+                <TextBlock Grid.Column="2" Text="Roulette" Height="40" Width="220" Margin="0,25,0,0" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Foreground="#9EFAFF"
+                       FontSize="35"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica"
+                       TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </TextBlock.Effect>
+    
+                </TextBlock>
+                <TextBlock Text="Try to guess which number will be drawn randomly! The more precise you bet the more you win! Guess the correct single number and win 35 times your bet! Pick one of the three pools of 12 numbers and win 3 times your bet! 
+                           If you guess the correct color, or if the number is odd or even, you win 2 times your bet! Bet on one of the three columns and win 3 times your bet if it is correct!" TextWrapping="Wrap" Height="400" Width="220" Margin="0,25,0,0" 
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="#9EFAFF"
+                           FontSize="18"
+                           FontWeight="DemiBold"
+                           FontFamily="Helvetica"
+                           TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+            </StackPanel>
+
+            <Button Grid.ColumnSpan="3" Content="Close" Height="40" Width="220" Margin="0,0,0,10" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       Background="Transparent"
+                       Foreground="#9EFAFF"
+                       FontSize="30"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica" Click="Button_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+
+        </Grid>
+        
+    </Grid>
+</Window>

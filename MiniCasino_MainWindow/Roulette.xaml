@@ -1,0 +1,1039 @@
+﻿<Window x:Class="MiniCasino_MainWindow.Roulette"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniCasino_MainWindow"
+        mc:Ignorable="d"
+        Title="Roulette" Height="450" Width="700"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--Backgroundcolor gradiant-->
+            <Border CornerRadius="20" Grid.RowSpan="2" >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#0C031C" Offset="0"/>
+                        <GradientStop Color="#2A2165" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <!--Textblocks for balance -->
+            <TextBlock Text="On Hand:" Height="40" Width="120" Margin="20,20,0,0" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Foreground="#9EFAFF"
+                       FontSize="25"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+
+            <TextBlock x:Name="tblMoney" Grid.ColumnSpan="2" Text="BALANCE" Height="40" Width="220" Margin="140,20,0,0" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Foreground="#9EFAFF"
+                       FontSize="25"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+
+            <StackPanel>
+                <!--Rules button -->
+                <Button Grid.Column="2" x:Name="btnRules" Content="Show rules" Height="40" Width="200" Margin="0,20,20,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Background="Transparent"
+                        Foreground="#9EFAFF"
+                        FontFamily="Helvetica"
+                        FontWeight="DemiBold"
+                        FontSize="25" Click="btnRules_Click">
+
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+
+                <!--History button -->
+                <Button Grid.Column="2" x:Name="btnHistory" Content="History" Height="40" Width="200" Margin="0,10,20,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Background="Transparent"
+                        Foreground="#9EFAFF"
+                        FontFamily="Helvetica"
+                        FontWeight="DemiBold"
+                        FontSize="25" Click="btnHistory_Click">
+
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+            </StackPanel>
+
+            <!--Choose amount -->
+            <TextBlock Grid.Row="1" Text="Place amount:" Height="40" Width="160" Margin="20,0,0,10" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Foreground="#9EFAFF"
+                       FontSize="25"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+
+            <!--1 button -->
+            <Button Grid.Row="1" x:Name="btn1Amount" Content="1" Height="40" Width="40" Margin="185,0,0,15"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    FontFamily="Helvetica"
+                    FontWeight="DemiBold"
+                    FontSize="25" Click="btn1Amount_Click">
+
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            <!--5 button -->
+            <Button Grid.Row="1" x:Name="btn5Amount" Content="5" Height="40" Width="40" Margin="230,0,0,15"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    FontFamily="Helvetica"
+                    FontWeight="DemiBold"
+                    FontSize="25" Click="btn5Amount_Click">
+
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            <!--10 button -->
+            <Button Grid.Row="1" x:Name="btn10Amount" Content="10" Height="40" Width="40" Margin="275,0,0,15"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    FontFamily="Helvetica"
+                    FontWeight="DemiBold"
+                    FontSize="25" Click="btn10Amount_Click">
+
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+
+            <!--50 button -->
+            <Button Grid.Row="1" x:Name="btn50Amount" Content="50" Height="40" Width="40" Margin="320,0,0,15"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    FontFamily="Helvetica"
+                    FontWeight="DemiBold"
+                    FontSize="25" Click="btn50Amount_Click">
+
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            <!--TextBox to choose amount-->
+            <TextBox Grid.Row="1" x:Name="tbAmount" Text="" Width="180" Height="40" Margin="365,0,0,15"
+                           HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                           FontSize="25"
+                           Foreground="#9EFAFF"
+                           Background="Transparent"
+                           BorderThickness="0.5"
+                           BorderBrush="#9EFAFF">
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </TextBox.Effect>
+
+            </TextBox>
+
+            <!--Leave button -->
+            <Button Grid.Row="1" x:Name="btnLeave" Content="Leave" Height="40" Width="140" Margin="0,0,10,15"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    FontFamily="Helvetica"
+                    FontWeight="DemiBold"
+                    FontSize="25" Click="btnLeave_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            <!--Play button -->
+            <Button Grid.Row="2" Grid.Column="0" x:Name="btnPlay" Content="Play" Height="40" Width="140" Margin="15,0,0,70"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    Background="Transparent"
+                    Foreground="#9EFAFF"
+                    FontFamily="Helvetica"
+                    FontWeight="DemiBold"
+                    FontSize="25" Click="btnPlay_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+
+            <!-- Msg textblock -->
+            <TextBlock x:Name="tblMsg" Grid.Row="1" Text="" Height="40" Width="350" Margin="0,0,0,70" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       Foreground="#9EFAFF"
+                       FontSize="25"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica"
+                       TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+
+            <!--roled number textblock-->
+            <TextBlock x:Name="tblRoled" Grid.Row="0" Text="Roled:" Height="40" Width="350" Margin="75,0,0,50" 
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Foreground="#9EFAFF"
+                       FontSize="25"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </TextBlock.Effect>
+
+            </TextBlock>
+
+            <!--Grid table-->
+            <Grid x:Name="gridTable" Grid.RowSpan="2" Width="550" Height="180" Margin="0,0,0,0"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <!--2 to 1-->
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <!--0,00-->
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <!--12er -->
+                    <RowDefinition/>
+                    <!--Even, odd, black, red bla bla-->
+                </Grid.RowDefinitions>
+
+                <!-- 2 to 1 buttons -->
+                <Button x:Name="btn2to1_1" Grid.RowSpan="1" Content="2 to 1" Margin="0,0,0,0"
+                        Background="Transparent"
+                        Foreground="#9EFAFF"
+                        FontFamily="Helvetica"
+                        FontWeight="DemiBold"
+                        FontSize="13" Click="btn2to1_1_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn2to1_2" Grid.Row="1" Content="2 to 1" Margin="0,0,0,0"
+                        Background="Transparent"
+                        Foreground="#9EFAFF"
+                        FontFamily="Helvetica"
+                        FontWeight="DemiBold"
+                        FontSize="13" Click="btn2to1_2_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn2to1_3" Grid.Row="2" Content="2 to 1"
+                        Background="Transparent"
+                        Foreground="#9EFAFF"
+                        FontFamily="Helvetica"
+                        FontWeight="DemiBold"
+                        FontSize="13" Height="36" VerticalAlignment="Top" Click="btn2to1_3_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                Color="#9EFAFF"
+                                                Opacity="100"
+                                                BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+
+                <!--Buttons 0,00 -->
+                <StackPanel Grid.Column="13" Grid.RowSpan="3">
+                    <Button x:Name="btn0" Grid.Column="13" Content="0" Height="55" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn0_Click">
+                        <Button.Effect>
+                            <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                        </Button.Effect>
+
+                    </Button>
+                    <Button x:Name="btn00" Grid.Column="13" Content="00" Height="53" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn00_Click">
+                        <Button.Effect>
+                            <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                        </Button.Effect>
+
+                    </Button>
+                </StackPanel>
+
+                <!-- buttons 1 - 36 -->
+                <Button x:Name="btn1" Grid.Row="2" Grid.Column="1" Content="1" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn1_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn2" Grid.Row="1" Grid.Column="1" Content="2" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn2_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn3" Grid.Row="0" Grid.Column="1" Content="3" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn3_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn4" Grid.Row="2" Grid.Column="2" Content="4" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn4_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn5" Grid.Row="1" Grid.Column="2" Content="5" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn5_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn6" Grid.Row="0" Grid.Column="2" Content="6" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn6_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn7" Grid.Row="2" Grid.Column="3" Content="7" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn7_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn8" Grid.Row="1" Grid.Column="3" Content="8" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn8_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn9" Grid.Row="0" Grid.Column="3" Content="9" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn9_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn10" Grid.Row="2" Grid.Column="4" Content="10" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn10_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn11" Grid.Row="1" Grid.Column="4" Content="11" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn11_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn12" Grid.Row="0" Grid.Column="4" Content="12" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn12_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn13" Grid.Row="2" Grid.Column="5" Content="13" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn13_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn14" Grid.Row="1" Grid.Column="5" Content="14" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn14_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn15" Grid.Row="0" Grid.Column="4" Content="15" Margin="39,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="40" Click="btn15_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn16" Grid.Row="2" Grid.Column="6" Content="16" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn16_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn17" Grid.Row="1" Grid.Column="6" Content="17" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn17_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn18" Grid.Row="0" Grid.Column="6" Content="18" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn18_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn19" Grid.Row="2" Grid.Column="7" Content="19" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn19_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn20" Grid.Row="1" Grid.Column="7" Content="20" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn20_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn21" Grid.Row="0" Grid.Column="7" Content="21" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn21_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn22" Grid.Row="2" Grid.Column="8" Content="22" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn22_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn23" Grid.Row="1" Grid.Column="8" Content="23" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn23_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn24" Grid.Row="0" Grid.Column="8" Content="24" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn24_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn25" Grid.Row="2" Grid.Column="9" Content="25" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn25_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn26" Grid.Row="1" Grid.Column="9" Content="26" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn26_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn27" Grid.Row="0" Grid.Column="9" Content="27" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn27_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn28" Grid.Row="2" Grid.Column="10" Content="28" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn28_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn29" Grid.Row="1" Grid.Column="10" Content="29" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn29_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn30" Grid.Row="0" Grid.Column="10" Content="30" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn30_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn31" Grid.Row="2" Grid.Column="11" Content="31" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn31_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn32" Grid.Row="1" Grid.Column="11" Content="32" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn32_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn33" Grid.Row="0" Grid.Column="11" Content="33" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn33_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn34" Grid.Row="2" Grid.Column="12" Content="34" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn34_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn35" Grid.Row="1" Grid.Column="12" Content="35" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn35_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn36" Grid.Row="0" Grid.Column="12" Content="36" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn36_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <!-- 12er -->
+                <Button x:Name="btn12_1" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Content="1st 12" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn12_1_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn12_2" Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="4" Content="2nd 12" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn12_2_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btn12_3" Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="4" Content="3rd 12" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="25" Click="btn12_3_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <!--1 to 18-->
+                <Button x:Name="btn1to18" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="1 to 18" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="20" Click="btn1to18_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <!-- even -->
+                <Button x:Name="btnEven" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Content="EVEN"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="20" Height="36" VerticalAlignment="Top" Click="btnEven_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <!--Farben -->
+                <Button x:Name="btnBlue" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="2" Content="Blue" Margin="0,0,0,0"
+                            Background="#9EFAFF"
+                            Foreground="#0C031C"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="20" Click="btnBlue_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <Button x:Name="btnBlack" Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="2" Content="Black" Margin="0,0,0,0"
+                            Background="#0C031C"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="20" Click="btnBlack_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <!--Odd -->
+                <Button x:Name="btnOdd" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="2" Content="ODD" Margin="0,0,0,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="20" Click="btnOdd_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+                <!--19 to 36-->
+                <Button x:Name="btn19to36" Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="4" Content="19 to 36" Margin="39,0,39,0"
+                            Background="Transparent"
+                            Foreground="#9EFAFF"
+                            FontFamily="Helvetica"
+                            FontWeight="DemiBold"
+                            FontSize="20" Height="36" VerticalAlignment="Top" Click="btn19to36_Click">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                                    Color="#9EFAFF"
+                                                    Opacity="100"
+                                                    BlurRadius="10"/>
+                    </Button.Effect>
+
+                </Button>
+            </Grid>
+
+
+
+
+
+
+        </Grid>
+    </Grid>
+</Window>

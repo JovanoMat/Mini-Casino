@@ -1,0 +1,180 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Cards\10C.png" />
+    <None Remove="Cards\10D.png" />
+    <None Remove="Cards\10H.png" />
+    <None Remove="Cards\10S.png" />
+    <None Remove="Cards\2C.png" />
+    <None Remove="Cards\2D.png" />
+    <None Remove="Cards\2H.png" />
+    <None Remove="Cards\2S.png" />
+    <None Remove="Cards\3C.png" />
+    <None Remove="Cards\3D.png" />
+    <None Remove="Cards\3H.png" />
+    <None Remove="Cards\3S.png" />
+    <None Remove="Cards\4C.png" />
+    <None Remove="Cards\4D.png" />
+    <None Remove="Cards\4H.png" />
+    <None Remove="Cards\4S.png" />
+    <None Remove="Cards\5C.png" />
+    <None Remove="Cards\5D.png" />
+    <None Remove="Cards\5H.png" />
+    <None Remove="Cards\5S.png" />
+    <None Remove="Cards\6C.png" />
+    <None Remove="Cards\6D.png" />
+    <None Remove="Cards\6H.png" />
+    <None Remove="Cards\6S.png" />
+    <None Remove="Cards\7C.png" />
+    <None Remove="Cards\7D.png" />
+    <None Remove="Cards\7H.png" />
+    <None Remove="Cards\7S.png" />
+    <None Remove="Cards\8C.png" />
+    <None Remove="Cards\8D.png" />
+    <None Remove="Cards\8H.png" />
+    <None Remove="Cards\8S.png" />
+    <None Remove="Cards\9C.png" />
+    <None Remove="Cards\9D.png" />
+    <None Remove="Cards\9H.png" />
+    <None Remove="Cards\9S.png" />
+    <None Remove="Cards\AC.png" />
+    <None Remove="Cards\aces.png" />
+    <None Remove="Cards\AD.png" />
+    <None Remove="Cards\AH.png" />
+    <None Remove="Cards\AS.png" />
+    <None Remove="Cards\back_cards-07.png" />
+    <None Remove="Cards\blue_back.png" />
+    <None Remove="Cards\gray_back.png" />
+    <None Remove="Cards\green_back.png" />
+    <None Remove="Cards\honors_spade-14.png" />
+    <None Remove="Cards\honor_clubs.png" />
+    <None Remove="Cards\honor_diamond.png" />
+    <None Remove="Cards\honor_heart-14.png" />
+    <None Remove="Cards\JC.png" />
+    <None Remove="Cards\JD.png" />
+    <None Remove="Cards\JH.png" />
+    <None Remove="Cards\JS.png" />
+    <None Remove="Cards\KC.png" />
+    <None Remove="Cards\KD.png" />
+    <None Remove="Cards\KH.png" />
+    <None Remove="Cards\KS.png" />
+    <None Remove="Cards\purple_back.png" />
+    <None Remove="Cards\QC.png" />
+    <None Remove="Cards\QD.png" />
+    <None Remove="Cards\QH.png" />
+    <None Remove="Cards\QS.png" />
+    <None Remove="Cards\red_back.png" />
+    <None Remove="Cards\yellow_back.png" />
+    <None Remove="Logos\Blackjack.jpg" />
+    <None Remove="Logos\Logo.jpg" />
+    <None Remove="Logos\Roulette.jpg" />
+    <None Remove="Logos\Slots.jpg" />
+    <None Remove="sounds\bank\mixkit-sci-fi-soft-static-1450.mp3" />
+    <None Remove="sounds\bank\mixkit-sci-fi-soft-static-1450.wav" />
+    <None Remove="sounds\luckywheel\mixkit-slot-machine-random-wheel-1930.wav" />
+    <None Remove="sounds\Main\mixkit-very-crowded-pub-or-party-loop-360.wav" />
+    <None Remove="sounds\mixkit-coin-win-notification-1992.wav" />
+    <None Remove="sounds\Poker\mixkit-cards-deck-hits-1994.wav" />
+    <None Remove="sounds\Poker\mixkit-thin-metal-card-deck-shuffle-3175.wav" />
+    <None Remove="sounds\roulette\mixkit-casino-roulette-ball-1987.wav" />
+    <None Remove="sounds\Slots\mixkit-slot-machine-random-wheel-1930 - Kopie.wav" />
+    <None Remove="sounds\Slots\mixkit-slot-machine-win-alert-1931.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Cards\10C.png" />
+    <Resource Include="Cards\10D.png" />
+    <Resource Include="Cards\10H.png" />
+    <Resource Include="Cards\10S.png" />
+    <Resource Include="Cards\2C.png" />
+    <Resource Include="Cards\2D.png" />
+    <Resource Include="Cards\2H.png" />
+    <Resource Include="Cards\2S.png" />
+    <Resource Include="Cards\3C.png" />
+    <Resource Include="Cards\3D.png" />
+    <Resource Include="Cards\3H.png" />
+    <Resource Include="Cards\3S.png" />
+    <Resource Include="Cards\4C.png" />
+    <Resource Include="Cards\4D.png" />
+    <Resource Include="Cards\4H.png" />
+    <Resource Include="Cards\4S.png" />
+    <Resource Include="Cards\5C.png" />
+    <Resource Include="Cards\5D.png" />
+    <Resource Include="Cards\5H.png" />
+    <Resource Include="Cards\5S.png" />
+    <Resource Include="Cards\6C.png" />
+    <Resource Include="Cards\6D.png" />
+    <Resource Include="Cards\6H.png" />
+    <Resource Include="Cards\6S.png" />
+    <Resource Include="Cards\7C.png" />
+    <Resource Include="Cards\7D.png" />
+    <Resource Include="Cards\7H.png" />
+    <Resource Include="Cards\7S.png" />
+    <Resource Include="Cards\8C.png" />
+    <Resource Include="Cards\8D.png" />
+    <Resource Include="Cards\8H.png" />
+    <Resource Include="Cards\8S.png" />
+    <Resource Include="Cards\9C.png" />
+    <Resource Include="Cards\9D.png" />
+    <Resource Include="Cards\9H.png" />
+    <Resource Include="Cards\9S.png" />
+    <Resource Include="Cards\AC.png" />
+    <Resource Include="Cards\aces.png" />
+    <Resource Include="Cards\AD.png" />
+    <Resource Include="Cards\AH.png" />
+    <Resource Include="Cards\AS.png" />
+    <Resource Include="Cards\back_cards-07.png" />
+    <Resource Include="Cards\blue_back.png" />
+    <Resource Include="Cards\gray_back.png" />
+    <Resource Include="Cards\green_back.png" />
+    <Resource Include="Cards\honors_spade-14.png" />
+    <Resource Include="Cards\honor_clubs.png" />
+    <Resource Include="Cards\honor_diamond.png" />
+    <Resource Include="Cards\honor_heart-14.png" />
+    <Resource Include="Cards\JC.png" />
+    <Resource Include="Cards\JD.png" />
+    <Resource Include="Cards\JH.png" />
+    <Resource Include="Cards\JS.png" />
+    <Resource Include="Cards\KC.png" />
+    <Resource Include="Cards\KD.png" />
+    <Resource Include="Cards\KH.png" />
+    <Resource Include="Cards\KS.png" />
+    <Resource Include="Cards\purple_back.png" />
+    <Resource Include="Cards\QC.png" />
+    <Resource Include="Cards\QD.png" />
+    <Resource Include="Cards\QH.png" />
+    <Resource Include="Cards\QS.png" />
+    <Resource Include="Cards\red_back.png" />
+    <Resource Include="Cards\yellow_back.png" />
+    <Resource Include="sounds\bank\mixkit-sci-fi-soft-static-1450.mp3">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logos\Blackjack.jpg" />
+    <Resource Include="Logos\Logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Logos\Roulette.jpg" />
+    <Resource Include="Logos\Slots.jpg" />
+    <Resource Include="sounds\luckywheel\mixkit-slot-machine-random-wheel-1930.wav" />
+    <Resource Include="sounds\Main\mixkit-very-crowded-pub-or-party-loop-360.wav" />
+    <Resource Include="sounds\Poker\mixkit-cards-deck-hits-1994.wav" />
+    <Resource Include="sounds\Poker\mixkit-thin-metal-card-deck-shuffle-3175.wav" />
+    <Resource Include="sounds\roulette\mixkit-casino-roulette-ball-1987.wav" />
+    <Resource Include="sounds\Slots\mixkit-slot-machine-random-wheel-1930 - Kopie.wav" />
+    <Resource Include="sounds\Slots\mixkit-slot-machine-win-alert-1931.wav" />
+  </ItemGroup>
+
+</Project>

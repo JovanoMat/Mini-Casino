@@ -1,0 +1,213 @@
+﻿<Window x:Class="MiniCasino_MainWindow.BankWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniCasino_MainWindow"
+        mc:Ignorable="d"
+        Title="BankWindow" Height="500" Width="500"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Grid>
+        <Grid>
+            <!--Backgroundcolor gradiant-->
+            <Border CornerRadius="20">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#0C031C" Offset="0.25"/>
+                        <GradientStop Color="#2A2165" Offset="0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <!--Stackpanel für frame und buttons-->
+            <StackPanel>
+                <TextBlock Text="ATM" Width="150" Height="50" Margin="-200,30,0,0" 
+                           Foreground="White" 
+                           FontSize="35"
+                           TextAlignment="Center">
+                    <TextBlock.Background>
+                        <RadialGradientBrush>
+                            <RadialGradientBrush.GradientStops>
+                                <GradientStop Color="White" Offset="0" />
+                                <GradientStop Color="Black" Offset="1" />
+                            </RadialGradientBrush.GradientStops>
+                        </RadialGradientBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                
+                <!--The ATM Machine-->
+                <Frame Width="350" Height="350" Margin="0,0,0,0" 
+                       BorderBrush="Black" 
+                       BorderThickness="10">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                            <GradientStop Color="#1B326E" Offset="0.05" />
+                            <GradientStop Color="#A7B8DE" Offset="0.2" />
+                            <GradientStop Color="#1B326E" Offset="0.25" />
+                            <GradientStop Color="#A7B8DE" Offset="0.4" />
+                            <GradientStop Color="#1B326E" Offset="0.45" />
+                            <GradientStop Color="#A7B8DE" Offset="0.6" />
+                            <GradientStop Color="#1B326E" Offset="0.65" />
+                            <GradientStop Color="#A7B8DE" Offset="0.8" />
+                            <GradientStop Color="#1B326E" Offset="0.85" />
+                            <GradientStop Color="#A7B8DE" Offset="1" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    
+                </Frame>
+                <Rectangle Width="350" Height="70" Fill="Black" />
+                    
+                <!--Withdraw button-->
+                <Button x:Name="btnWithdraw" Content="Withdraw" Width="80" Height="30" Margin="100,-100,0,0"
+                        HorizontalAlignment="Left"
+                        Background="LightGray"
+                        BorderBrush="#202020"
+                        BorderThickness="1"
+                        Foreground="#202020"
+                        FontSize="15" Click="btnWithdraw_Click"/>
+                
+                <!--Deposit button-->
+                <Button x:Name="btnDeposit" Content="Deposit" Width="80" Height="30" Margin="320,-100,0,0"
+                        HorizontalAlignment="Left"
+                        Background="LightGray"
+                        BorderBrush="#202020"
+                        BorderThickness="1"
+                        Foreground="#202020"
+                        FontSize="15" Click="btnDeposit_Click"/>
+
+                <!--Exit button-->
+                <Button Content="&lt;" Height="400" Width="30" Margin="-420,-500,0,0"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Foreground="White"
+                        FontSize="30"
+                        VerticalContentAlignment="Center" Click="Button_Click"/>
+                
+                <!-- Textblocks for user -->
+                <TextBlock Text="User:" Width="90" Height="30" Margin="100,-700,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+                    
+                </TextBlock>
+                <TextBlock x:Name="tblUsername" Text="USER" Width="210" Height="30" Margin="180,-700,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+
+                <!-- Textblocks for amount on Hand-->
+                <TextBlock Text="On Hand:" Width="120" Height="30" Margin="100,-600,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+                <TextBlock x:Name="tblOnHand" Text="AMOUNT" Width="170" Height="30" Margin="220,-600,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+
+                <!-- Textblocks for amount deposited-->
+                <TextBlock Text="Deposited:" Width="120" Height="30" Margin="100,-500,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+                <TextBlock x:Name="tblDeposited" Text="AMOUNT" Width="150" Height="30" Margin="240,-500,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+
+                <!-- Textblock and textbox for amount-->
+                <TextBlock Text="Amount:" Width="95" Height="30" Margin="100,-300,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+                <TextBox x:Name="tbAmount" Text="" Width="180" Height="30" Margin="210,-300,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="25"
+                           Foreground="AntiqueWhite"
+                           Background="Transparent"
+                           BorderThickness="0.5"
+                           BorderBrush="AntiqueWhite">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBox.Effect>
+
+                </TextBox>
+
+                <!--Textblock for error message-->
+                <TextBlock x:Name="tblError" Text="" Width="290" Height="30" Margin="100,-220,0,0"
+                           HorizontalAlignment="Left"
+                           FontSize="20"
+                           Foreground="AntiqueWhite">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                            Color="AntiqueWhite"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>

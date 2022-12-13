@@ -1,0 +1,55 @@
+﻿<Window x:Class="MiniCasino_MainWindow.history"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniCasino_MainWindow"
+        mc:Ignorable="d"
+        Title="history" Height="450" Width="300"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Grid>
+        <Border CornerRadius="20" Grid.RowSpan="2" >
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#0C031C" Offset="0"/>
+                    <GradientStop Color="#2A2165" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <StackPanel VerticalAlignment="Center">
+            <ListBox x:Name="lbHistory" Height="300" Width="250" Background="Transparent"
+                     BorderBrush="#9EFAFF"
+                     BorderThickness="0.5"
+                     FontFamily="Helvetica"
+                     FontSize="50"
+                     Foreground="#9EFAFF">
+                <ListBox.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </ListBox.Effect>
+
+            </ListBox>
+
+            <Button x:Name="btnLeave" Content="Leave" Height="50" Width="200" Margin="0,20,0,0" 
+                       Background="Transparent"
+                       HorizontalAlignment="Center"
+                       Foreground="#9EFAFF"
+                       FontSize="40"
+                       FontWeight="DemiBold"
+                       FontFamily="Helvetica" Click="btnLeave_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0"
+                                            Color="#9EFAFF"
+                                            Opacity="100"
+                                            BlurRadius="10"/>
+                </Button.Effect>
+
+            </Button>
+        </StackPanel>
+    
+    </Grid>
+</Window>
