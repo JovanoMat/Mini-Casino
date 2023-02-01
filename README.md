@@ -2,7 +2,7 @@
 
 ## Softwareengineering Project 2021
 
-3 classic luck-based minigames in one WPF application (with a bonus game):
+3 (and a bonus) classic luck-based minigames in one WPF application:
   - Slots
   - Blackjack
   - Roulette 
